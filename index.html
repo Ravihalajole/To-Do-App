@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="header w-100 flex justify-center items-center">
+        <div class="title">Tasks</div>
+        <div class="settingsIcon"><img src="icons/settings.svg" alt="Settings"></div>
+    </div>
+    <div class="progressBar flex w-100">
+        <div class="aLine"></div>
+        <div class="spaceLine"></div>
+        <div class="bLine"></div>
+    </div>
+    <div class="spaceBelowHeader"></div>
+    <div class="floatingBtn">
+        <div id="createBtn" class="flex items-center justify-center">+</div>
+    </div>
+    <div id="createForm" class="form-parent hide justify-center items-center w-100">
+        <div class="centerForm flex flex-col items-center">
+            <div class="form-title text-center">Add Task</div>
+            <div>
+                <input type="text" id="taskNameIn" placeholder="Task Name">
+            </div>
+            <div>
+                <input type="text" id="descriptionIn" placeholder="Description">
+            </div>
+            <div class="btnContainer flex justify-end items-center w-100">
+                <div id="cancelCreate" class="closeBtn button">Cancel</div>
+                <div id="addBtn" class="primaryBtn button">Add</div>
+            </div>
+        </div>
+    </div>
+    <div id="updateForm" class="form-parent hide justify-center items-center w-100">
+        <div class="centerForm flex flex-col items-center">
+            <div class="form-title text-center">Update Task</div>
+            <div>
+                <input type="text" id="updateTaskNameIn" placeholder="Task Name">
+            </div>
+            <div>
+                <input type="text" id="updateDescriptionIn" placeholder="Description">
+            </div>
+            <div class="btnContainer flex justify-end items-center w-100">
+                <div id="cancelUpdate" class="closeBtn button">Cancel</div>
+                <div id="updateSaveBtn" class="primaryBtn button">Update</div>
+            </div>
+        </div>
+    </div>
+    <div id="deleteForm" class="form-parent hide justify-center items-center w-100">
+        <div class="centerForm flex flex-col items-center">
+            <div class="bold">Do you really want to delete this task?</div>
+            <div class="btnContainer flex justify-end items-center w-100">
+                <div id="cancelDelete" class="closeBtn button">Cancel</div>
+                <div id="deleteBtn" class="primaryBtn button">Delete</div>
+            </div>
+        </div>
+    </div>
+    <div id="boardContainer">
+        <div id="board" class="flex flex-col"></div>
+        <div class="boardBottomSpace"></div>
+    </div>
+    <div class="emptySpace">
+    </div>
+    <div class="settings hide w-100 flex-col justify-center items-center">
+        <div class="header w-100 flex">
+            <div id="backSettingsBtn" class="button"></div>
+        </div>
+        <div class="centerForm">
+            <div class="changeTheme flex w-100">
+                <div class="changeThemeLabel">Change theme</div>
+                <div class="changeThemeInpContainer">
+                    <input type="checkbox" id="changeThemeInp">
+                </div>
+            </div>
+            <p class="credit">Developed by Ravi</p>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

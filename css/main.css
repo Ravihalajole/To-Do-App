@@ -1,0 +1,398 @@
+:root {
+    --col-dark: #263238;
+    --col-black: #000;
+    --col-light: #ECEFF1;
+    --col-dark-800: #37474F;
+    --col-dark-700: #455A64;
+    --col-dark-600: #546E7A;
+    --col-dark-500: #607D8B;
+    --col-dark-400: #78909C;
+    --col-dark-300: #90A4AE;
+    --col-dark-200: #B0BEC5;
+    --col-dark-100: #CFD8DC;
+    --col-blue-900: #01579B;
+    --col-blue-100: #B3E5FC;
+    --col-blue-300: #4FC3F7;
+    --col-blue-500: #03A9F4;
+    --col-blue-700: #0288D1;
+    --col-orange-100: #FFCCBC;
+    --col-orange-300: #FF8A65;
+    --col-orange-500: #FF5722;
+    --col-orange-700: #E64A19;
+    --col-orange-900: #BF360C;
+    --col-dark-trans: #263238ee;
+}
+[theme="light"]{
+    --col-dark: #ECEFF1;
+    --col-light: #263238;;
+    --col-dark-100: #37474F;
+    --col-dark-200: #455A64;
+    --col-dark-300: #546E7A;
+    --col-dark-400: #607D8B;
+    --col-dark-500: #78909C;
+    --col-dark-600: #90A4AE;
+    --col-dark-700: #B0BEC5;
+    --col-dark-800: #CFD8DC;
+    --col-dark-trans: #ECEFF1ee;
+}
+/* reusables */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-end {
+    align-items: end;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/*Custom*/
+html {
+    font-size: 14px;
+}
+
+body {
+    background-color: var(--col-dark);
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--col-dark-700);
+    color: var(--col-dark-100);
+    font-size: 3rem;
+    padding: 1rem;
+    padding-top: 3rem;
+    height: 8rem;
+    z-index: 1;
+}
+.title{
+    flex: 1;
+}
+.settingsIcon img{
+    height: 2rem;
+    width: 2rem;
+}
+/* ProgressBar */
+.progressBar{
+    position: fixed;
+    top:8rem;
+    left: 0;
+    background-color: var(--col-dark-700);
+    height: 5px;
+    z-index: 1;
+}
+.progressBar div{
+    border-radius: 100vmax;
+    transition: all 300ms;
+    height: 5px;
+}
+.aLine{
+    background-color: var(--col-blue-500);
+}
+.spaceLine{
+    flex: 1;
+}
+.bLine{
+    background-color: var(--col-orange-500);
+}
+/* additional space */
+.spaceBelowHeader {
+    height: 40vh;
+}
+
+/* floating create btn */
+.floatingBtn {
+    position: fixed;
+    bottom: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--col-dark-100);
+    font-size: 3rem;
+}
+
+#createBtn {
+    background-color: var(--col-blue-700);
+    border-radius: 100%;
+    height: 10vh;
+    width: 10vh;
+    box-shadow: var(--col-dark) 0 0 10px;
+}
+
+/* Board related */
+#boardContainer {
+    background-color: var(--col-dark-800);
+    width: 90%;
+    min-height: 60vh;
+    margin: 0 auto;
+    border-radius: 25px 25px 0 0;
+    padding: 1.5rem;
+}
+
+.boardBottomSpace {
+    height: 15vh;
+}
+
+/* record related */
+.record {
+    color: var(--col-dark-100);
+    padding: 1rem 4px;
+    border-bottom: 2px solid var(--col-dark-600);
+}
+
+.record:last-of-type {
+    border-bottom: 0;
+}
+
+.tName-Desc {
+    flex: 3;
+}
+
+.checkboxContainer {
+    flex: 1;
+}
+
+/* tName-Desc */
+.tName {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.tDescription {
+    font-size: 1rem;
+}
+
+/* checkboxContainer */
+.tcheckbox {
+    all: unset;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--col-dark-400);
+    border-radius: 12px;
+    position: relative;
+}
+
+.tcheckbox:checked {
+    background-color: var(--col-blue-700);
+}
+
+.tcheckbox:checked::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 0.45rem);
+    left: calc(50% - 0.55rem);
+    display: block;
+    height: 0.5rem;
+    width: 1rem;
+    border-width: 0 0 2px 2px;
+    border-color: var(--col-light);
+    border-style: solid;
+    transform: rotate(-45deg);
+}
+
+/* Update and Delete Related */
+.tEdit {
+    margin-top: 1rem;
+}
+
+.tEdit div {
+    flex: 1;
+}
+
+.tEdit img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* popup window or form */
+.form-parent {
+    background-color: var(--col-dark-trans);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 2;
+    color: var(--col-dark-100);
+}
+
+.centerForm {
+    background-color: var(--col-dark-800);
+    border-radius: 20px;
+    width: 96%;
+    margin: 0 2%;
+    margin-top: -10%;
+    padding: 2rem;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+.centerForm > div{
+    width: 100%;
+}
+/* input elements */
+.centerForm input[type="text"] {
+    all: unset;
+    height: 3rem;
+    width: 100%;
+    outline: 2px solid var(--col-dark-500);
+    text-indent: 1rem;
+}
+
+.centerForm input[type="text"]:focus {
+    outline: 2px solid var(--col-blue-500);
+}
+
+.centerForm input[type="text"]::placeholder {
+    color: var(--col-dark-400);
+}
+.centerForm 
+/* form buttons */
+.button {
+    width: max-content;
+    padding: 0.7rem 1rem;
+    border-radius: 100vmax;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+.btnContainer {
+    gap: 0.5rem;
+}
+
+.primaryBtn {
+    background-color: var(--col-blue-700);
+}
+
+.closeBtn {
+    background-color: var(--col-orange-500);
+}
+/* No task Message */
+.noTaskMsg{
+    color: var(--col-dark-300);
+    font-size: 1.5rem;
+}
+/* Settings Page */
+.settings{
+    background-color: var(--col-dark);
+    color: var(--col-dark-100);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 2;
+}
+/* back button */
+#backSettingsBtn{
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    position: relative;
+}
+#backSettingsBtn::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1.1rem;
+    left: 1.1rem;
+    border-width: 0 0 4px 4px;
+    border-style:solid ;
+    border-color: var(--col-dark-100);
+    transform: rotate(45deg);
+    width: 1rem;
+    height: 1rem;
+    transition: all 300ms;
+}
+/* theme */
+.changeTheme{
+    border-bottom: 2px solid var(--col-dark-500);
+    padding: 2rem 0;
+}
+.changeThemeInpContainer input[type="checkbox"]{
+    all: unset;
+    display: block;
+    background-color: var(--col-dark-600);
+    width: 4rem;
+    height: 2rem;
+    border-radius: 100vmax;
+    position: relative;
+    transition: all 300ms;
+}
+.changeThemeInpContainer input[type="checkbox"]::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0.15rem;
+    left: 0.15rem;
+    background-color: var(--col-blue-100);
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 100vmax;
+    transition: all 300ms;
+}
+.changeThemeInpContainer input[type="checkbox"]:checked{
+    background-color: var(--col-blue-700);
+}
+.changeThemeInpContainer input[type="checkbox"]:checked::after{
+    left:2.15rem;
+}
+.changeThemeLabel{
+    flex: 1;
+}
+/* credit */
+.credit{
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--col-dark-300);
+    font-size: 1rem;
+}
